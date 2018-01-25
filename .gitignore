@@ -1,6 +1,4 @@
-assets/
-scripts/
-styles/
+package-lock.json
 snaps/*.png
 snaps/**/missingno.*
 

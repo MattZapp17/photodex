@@ -8,20 +8,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta name="description" content="Photódex: Gotta snap 'em all!'">
   <meta name="author" content="JT Atomico">
-  <meta property="og:image" content="http://www.photodex.io/preview.jpg" />
+  <meta property="og:title" content="JTAtomico's Photódex" />
+  <meta name="og:description" content="Gotta snap 'em all!'">
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="http://jtatomico.photodex.io/preview.jpg" />
+  <meta property="og:url" content="http://jtatomico.photodex.io/" />
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="http://www.photodex.io/cdn/styles/main.css">
+  <link rel="stylesheet" href="styles/main.css">
 </head>
 
 <body class="loading">
 
-  <div id="banner"></div>
-  <div id="content"></div>
+  <div id="banner">
+    <h1>PHOTÓDEX</h1>
+    <h2 class="hidden-while-loading">SNAPPED: <span id="snapped-count">0</span></h2>
+    <h2 class="hidden-when-loaded">LOADING <span class="fa fa-spinner fa-pulse"></span></h2>
+  </div>
+  <div id="content">
+    <div id="entries" class="hidden-while-loading"></div>
+    <div id="gallery">
+      <img class="gallery-image previous">
+      <img class="gallery-image current">
+      <img class="gallery-image next">
+      <img id="close-button" src="assets/close.png">
+    </div>
+  </div>
 
   <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
-  <script src="http://www.photodex.io/cdn/scripts/jquery.mobile.custom.min.js"></script>
-  <script src="http://www.photodex.io/cdn/scripts/main.js"></script>
+  <script src="scripts/jquery.mobile.custom.min.js"></script>
+  <script src="scripts/main.js"></script>
 
 </body>
 
