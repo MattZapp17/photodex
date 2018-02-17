@@ -17,8 +17,8 @@ $(function () {
   var UNOBTAINABLE = [
     // Mythical
     151, 251, 385, 386,
-    // Unrleased Legendary
-    377, 378, 379, 380, 381, 384,
+    // Unreleased Legendary
+    377, 378, 379, 380, 381,
     // Babies
     172, 173, 174, 175, 236, 238, 239, 240, 298, 360,
     // Evolution items
@@ -29,17 +29,10 @@ $(function () {
     235,
     // Hoenn withheld evolutions
     254, 257, 260, 266, 267, 268, 269, 272, 275, 282,
-    289, 295, 308, 310, 321, 330, 350, 365,
+    289, 295, 308, 310, 321, 330, 334, 350, 365, 373,
+    376,
     // Unreleased Hoenn
-    276, 277, 278, 279,
-    283, 284,
-    290, 291, 292,
-    313, 314,
-    327,
-    333, 334,
-    351, 352, 357, 358,
-    366, 367, 368,
-    371, 372, 373, 374, 375, 376
+    290, 291, 292, 327, 352, 366, 367, 368
   ];
 
   $.get('snaps/snaps.json')
@@ -153,7 +146,16 @@ $(function () {
 
   function slideToPreviousSnap() {
     if (!galleryActive()) return;
-    setCurrentSnap(getPreviousSnap());
+    var previousSnap = getPreviousSnap();
+    if (!previousSnap) {
+      var current = $('.current');
+      current.removeClass('current').addClass('next');
+      setTimeout(function() {
+        current.removeClass('next').addClass('current');
+      }, 100);
+      return;
+    }
+    setCurrentSnap(previousSnap);
     $('.next').remove();
     $('.current').removeClass('current').addClass('next');
     $('.previous').removeClass('previous').addClass('current');
@@ -163,7 +165,16 @@ $(function () {
 
   function slideToNextSnap() {
     if (!galleryActive()) return;
-    setCurrentSnap(getNextSnap());
+    var nextSnap = getNextSnap();
+    if (!nextSnap) {
+      var current = $('.current');
+      current.removeClass('current').addClass('previous');
+      setTimeout(function() {
+        current.removeClass('previous').addClass('current');
+      }, 100);
+      return;
+    }
+    setCurrentSnap(nextSnap);
     $('.previous').remove();
     $('.current').removeClass('current').addClass('previous');
     $('.next').removeClass('next').addClass('current');
@@ -176,12 +187,12 @@ $(function () {
   }
 
   function getPreviousSnap() {
-    var previousIndex = (snaps.indexOf(_currentSnap) - 1 + snaps.length) % snaps.length;
+    var previousIndex = snaps.indexOf(_currentSnap) - 1;
     return snaps[previousIndex];
   }
 
   function getNextSnap() {
-    var nextIndex = (snaps.indexOf(_currentSnap) + 1) % snaps.length;
+    var nextIndex = snaps.indexOf(_currentSnap) + 1;
     return snaps[nextIndex];
   }
 
@@ -195,6 +206,7 @@ $(function () {
   }
 
   function setGalleryImage(position, number) {
+    if (number === undefined) return;
     $('.' + position + '.gallery-image').attr('src', 'snaps/gallery/' + number + '.jpg');
   }
 
