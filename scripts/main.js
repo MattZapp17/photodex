@@ -16,7 +16,7 @@ $(function () {
   var GEN_III_START = 252;
   var UNOBTAINABLE = [
     // Mythical
-    151, 251, 385, 386,
+    251, 385, 386,
     // Unreleased Legendary
     377, 378, 379,
     // Babies
