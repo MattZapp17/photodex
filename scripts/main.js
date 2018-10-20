@@ -14,11 +14,12 @@ $(function () {
 
   var GEN_II_START = 152;
   var GEN_III_START = 252;
+  var GEN_IV_START = 387;
   var UNOBTAINABLE = [
     // Mythical
-    251, 385, 386,
+    385,
     // Unreleased Legendary
-    377, 378, 379,
+    
     // Babies
     172, 173, 174, 175, 236, 238, 239, 240, 298, 360,
     // Evolution items
@@ -32,7 +33,7 @@ $(function () {
     289, 295, 308, 310, 321, 330, 334, 350, 373,
     376,
     // Unreleased Hoenn
-    290, 291, 292, 327, 352, 366, 367, 368
+    290, 291, 292, 352, 366, 367, 368
   ];
 
   $.get('snaps/snaps.json')
@@ -56,7 +57,7 @@ $(function () {
       while (number.length < 3) {
         number = '0' + number;
       }
-      var generationClass = i < GEN_II_START ? 'gen-i' : i < GEN_III_START ? 'gen-ii' : 'gen-iii';
+      var generationClass = i < GEN_II_START ? 'gen-i' : i < GEN_III_START ? 'gen-ii' : i < GEN_IV_START ? 'gen-iii' : 'gen-iv';
       var entry = buildEntry(number).addClass(generationClass);
       if (UNOBTAINABLE.indexOf(i) !== -1) {
         entry.addClass('unobtainable');
