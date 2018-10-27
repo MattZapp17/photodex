@@ -143,6 +143,10 @@ body:not(.loading) .hidden-when-loaded {
   background-color: #B6C6F9;
 }
 
+.entry.gen-iv {
+  background-color: #C9C9FF;
+}
+
 .entry.unobtainable {
   background-color: rgba(255, 255, 255, 0.15);
 }
@@ -157,6 +161,10 @@ body:not(.loading) .hidden-when-loaded {
 
 .entry.gen-iii.unobtainable {
   color: #B6C6F9;
+}
+
+.entry.gen-iv.unobtainable {
+  color: #C9C9FF
 }
 
 .entry img {
