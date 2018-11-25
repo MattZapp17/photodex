@@ -1,4 +1,4 @@
-$(function () {
+﻿$(function () {
   var $window = $(window);
   var $body = $(document.body);
   var $entries = $('#entries');
@@ -30,10 +30,10 @@ $(function () {
     235,
     // Hoenn withheld evolutions
     254, 257, 260, 266, 267, 268, 269, 272, 275, 282,
-    289, 295, 308, 310, 321, 330, 334, 350, 373,
+    289, 291, 295, 308, 310, 321, 330, 334, 350, 373,
     376,
     // Unreleased Hoenn
-    290, 291, 292, 352, 366, 367, 368,
+    352, 366, 367, 368,
 	// SINNOH
   389, // Torterra
   392, // Infernape
@@ -64,7 +64,6 @@ $(function () {
   431, // Glameow
   432, // Purugly
   433, // Chingling
-  435, // Skuntank
   436, // Bronzor
   437, // Bronzong
   438, // Bonsly
@@ -113,12 +112,12 @@ $(function () {
   484, // Palkia
   485, // Heatran
   486, // Regigigas
-  488, // Cresselia
   489, // Phione
   490, // Manaphy
   491, // Darkrai
   492, // Shaymin
-  493 // Arceus
+  493, // Arceus
+  809 //Melmetal
   ];
 
   $.get('snaps/snaps.json')
@@ -134,21 +133,27 @@ $(function () {
     });
 
   function loadSnaps() {
-    $('#snapped-count').text(snaps.length);
+    $('#snapped-count').text(snaps.length + 1); //+1 to account for meltan
 
     var highestSnap = snaps[snaps.length - 1];
+	if (highestSnap >= 808)
+	{
+		highestSnap = 493;
+	}
     for (var i = 1; i <= highestSnap; i++) {
       var number = i.toString();
       while (number.length < 3) {
         number = '0' + number;
       }
       var generationClass = i < GEN_II_START ? 'gen-i' : i < GEN_III_START ? 'gen-ii' : i < GEN_IV_START ? 'gen-iii' : 'gen-iv';
-      var entry = buildEntry(number).addClass(generationClass);
+	  var entry = buildEntry(number).addClass(generationClass);
       if (UNOBTAINABLE.indexOf(i) !== -1) {
         entry.addClass('unobtainable');
       }
       $entries.append(entry);
     }
+	
+	$entries.append(buildEntry("808").addClass("gen-?"));
 
     // Hacky way to ensure that last row of flex aligns to grid.
     // http://stackoverflow.com/a/22018710
@@ -193,15 +198,18 @@ $(function () {
     });
 
   function buildEntry(number) {
-    var $entry = $('<div/>', {
-      id: 'entry-' + number,
-      "class": 'entry'
-    });
+
+	var $entry = $('<div/>', {
+	  id: 'entry-' + number,
+	  "class": 'entry'
+	});
+
     if (snaps.indexOf(number) !== -1) {
       addSnap($entry, number);
     } else {
       $entry.text(number);
     }
+
     return $entry;
   }
 
