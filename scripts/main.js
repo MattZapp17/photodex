@@ -24,8 +24,6 @@
     172, 173, 174, 175, 236, 238, 239, 240, 298, 360,
     // Evolution items
     182, 186, 192, 199, 208, 212, 230, 233,
-    // Eeveelotuions
-    196, 197,
     // Unreleased Johto
     235,
     // Hoenn withheld evolutions
@@ -64,8 +62,6 @@
   431, // Glameow
   432, // Purugly
   433, // Chingling
-  436, // Bronzor
-  437, // Bronzong
   438, // Bonsly
   439, // Mime Jr.
   440, // Happiny
@@ -77,15 +73,7 @@
   448, // Lucario
   449, // Hippopotas
   450, // Hippowdon
-  451, // Skorupi
-  452, // Drapion
-  453, // Croagunk
-  454, // Toxicroak
-  456, // Finneon
-  457, // Lumineon
   458, // Mantyke
-  459, // Snover
-  460, // Abomasnow
   461, // Weavile
   462, // Magnezone
   463, // Lickilicky
@@ -110,7 +98,6 @@
   482, // Azelf
   483, // Dialga
   484, // Palkia
-  485, // Heatran
   486, // Regigigas
   489, // Phione
   490, // Manaphy
