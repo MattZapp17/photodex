@@ -49,7 +49,6 @@
   414, // Mothim
   415, // Combee
   416, // Vespiquen
-  418, // Buizel
   419, // Floatzel
   420, // Cherubi
   421, // Cherrim
