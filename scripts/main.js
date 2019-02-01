@@ -29,7 +29,6 @@
     // Hoenn withheld evolutions
     254, 257, 260, 266, 267, 268, 269, 272, 275, 282,
     289, 291, 295, 308, 310, 321, 330, 334, 350, 373,
-    376,
     // Unreleased Hoenn
     352, 366, 367, 368,
 	// SINNOH
@@ -40,14 +39,11 @@
   405, // Luxray
   406, // Budew
   407, // Roserade
-  408, // Cranidos
   409, // Rampardos
-  410, // Shieldon
   411, // Bastiodon
   412, // Burmy
   413, // Wormadam
   414, // Mothim
-  415, // Combee
   416, // Vespiquen
   419, // Floatzel
   420, // Cherubi
@@ -58,8 +54,6 @@
   426, // Drifblim
   429, // Mismagius
   430, // Honchkrow
-  431, // Glameow
-  432, // Purugly
   433, // Chingling
   438, // Bonsly
   439, // Mime Jr.
@@ -96,7 +90,6 @@
   481, // Mesprit
   482, // Azelf
   483, // Dialga
-  484, // Palkia
   486, // Regigigas
   489, // Phione
   490, // Manaphy
